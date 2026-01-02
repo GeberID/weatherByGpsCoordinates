@@ -1,11 +1,9 @@
 import json
 from dataclasses import dataclass
-from typing import Any
 from urllib.request import urlopen
 
 from exceptions import CantGetCoordinates
-
-url = "http://ipinfo.io/json"
+from config import COORDINATE
 
 
 @dataclass(slots=True)
@@ -21,10 +19,10 @@ def _get_lat_lot(loc: list[str]) -> tuple[float, float]:
     return latitude,longitude
 
 def get_gps_coordinates() -> Coordinates:
-    urlopen(url)
-    data = json.load(urlopen(url))
+    urlopen(COORDINATE)
+    data = json.load(urlopen(COORDINATE))
     if data is None:
-        raise CantGetCoordinates(url)
+        raise CantGetCoordinates(COORDINATE)
     latitude, longitude = _get_lat_lot(data['loc'])
     city = data['city']
     country = data['country']

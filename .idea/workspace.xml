@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00a3b506-eee8-428e-a628-f18dbf1f2a43" name="Changes" comment="изменил структуру">
-      <change afterPath="$PROJECT_DIR$/weather/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="00a3b506-eee8-428e-a628-f18dbf1f2a43" name="Changes" comment="первый вариант получений координат">
+      <change afterPath="$PROJECT_DIR$/weather/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather/coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/coordinates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/weather_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/weather_printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather_printer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767350223302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="первый вариант получений координат">
+      <option name="closed" value="true" />
+      <created>1767359688241</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767359688241</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,14 +137,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="изменил структуру" />
-    <option name="LAST_COMMIT_MESSAGE" value="изменил структуру" />
+    <MESSAGE value="первый вариант получений координат" />
+    <option name="LAST_COMMIT_MESSAGE" value="первый вариант получений координат" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/weather/coordinates.py</url>
-          <line>22</line>
+          <line>20</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

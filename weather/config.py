@@ -1,0 +1,1 @@
+COORDINATE = "http://ipinfo.io/json"
