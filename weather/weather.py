@@ -1,6 +1,6 @@
 from coordinates import get_gps_coordinates
 from exceptions import CantGetCoordinates
-from weather.exceptions import ApiServiceError
+from exceptions import ApiServiceError
 from weather_api import get_weather
 from weather_printer import format_weather
 
