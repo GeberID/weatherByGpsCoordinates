@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00a3b506-eee8-428e-a628-f18dbf1f2a43" name="Changes" comment="config.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="00a3b506-eee8-428e-a628-f18dbf1f2a43" name="Changes" comment="первый рабочий вариант">
       <change beforePath="$PROJECT_DIR$/weather/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/weather_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather_api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +37,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.__init__.executor": "Run",
-    "Python.weather.executor": "Run",
+    "Python.weather.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -131,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767359836441</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="первый рабочий вариант">
+      <option name="closed" value="true" />
+      <created>1767362412172</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767362412172</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,17 +154,7 @@
     <MESSAGE value="изменил структуру" />
     <MESSAGE value="первый вариант получений координат" />
     <MESSAGE value="config.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="config.py" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/weather/weather_api.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="первый рабочий вариант" />
+    <option name="LAST_COMMIT_MESSAGE" value="первый рабочий вариант" />
   </component>
 </project>
