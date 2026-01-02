@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00a3b506-eee8-428e-a628-f18dbf1f2a43" name="Changes" comment="first commit">
+    <list default="true" id="00a3b506-eee8-428e-a628-f18dbf1f2a43" name="Changes" comment="изменил структуру">
+      <change afterPath="$PROJECT_DIR$/weather/exceptions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/coordinates.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/coordinates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/weather_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather/weather_printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather/weather_printer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Stub" />
         <option value="Python Script" />
       </list>
     </option>
@@ -37,11 +42,49 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.__init__.executor": "Run",
+    "Python.weather.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "develop"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sanya\PycharmProjects\WeatherByGpsCoordinates\weather" />
+      <recent name="C:\Users\Sanya\PycharmProjects\WeatherByGpsCoordinates\weather\weather_api" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="weather" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WeatherByGpsCoordinates" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/weather" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weather/weather.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.weather" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -65,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767349820419</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="изменил структуру">
+      <option name="closed" value="true" />
+      <created>1767350223302</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767350223302</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,6 +132,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="изменил структуру" />
+    <option name="LAST_COMMIT_MESSAGE" value="изменил структуру" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weather/coordinates.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
