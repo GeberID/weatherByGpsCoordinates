@@ -1,6 +1,9 @@
+from pathlib import Path
+
 from coordinates import get_gps_coordinates
 from exceptions import CantGetCoordinates
 from exceptions import ApiServiceError
+from history import save_weather, FileWeatherHistory
 from weather_api import get_weather
 from weather_printer import format_weather
 
@@ -16,6 +19,7 @@ def main():
         print("Не смог получить погоду в API-сервиса погоды")
         exit(1)
     print(format_weather(weather))
+    save_weather(weather,FileWeatherHistory(Path.cwd() / "weather_history.txt"))
 
 if __name__ == '__main__':
     main()
