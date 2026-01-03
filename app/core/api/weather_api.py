@@ -8,9 +8,9 @@ from typing import TypeAlias, Literal
 from enum import Enum
 from urllib.error import URLError
 
-from coordinates import Coordinates
-from exceptions import ApiServiceError
-from config import OPENWEATHER_URL
+from app.core.api.gps_api import Coordinates
+from app.core.api.exceptions import ApiServiceError
+from app.core.config import OPENWEATHER_URL
 
 Celsius : TypeAlias = float
 
@@ -27,7 +27,7 @@ class WeatherType(Enum):
 @dataclass
 class Weather:
     temperature: Celsius
-    weather_type: WeatherType
+    weather_type: str
     sunrise_time: datetime
     sunset_time: datetime
     city: str
@@ -60,7 +60,7 @@ def _parse_openweather_response(openweather_response: str,
 def _parse_temperature(weather_json: dict) -> Celsius:
     return round(weather_json["main"]["temp"])
 
-def _parse_weather_type(weather_json: dict) -> WeatherType:
+def _parse_weather_type(weather_json: dict) -> str:
     try:
         type_id = str(weather_json["weather"][0]["id"])
     except (IndexError, KeyError):

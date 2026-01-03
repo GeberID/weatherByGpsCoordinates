@@ -1,5 +1,4 @@
-from weather_api import Weather
-
+from app.core.api.weather_api import Weather
 
 def format_weather(weather:Weather) -> str:
     return f'''

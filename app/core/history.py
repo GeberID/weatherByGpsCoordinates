@@ -2,8 +2,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Protocol
 
-from weather_printer import format_weather
-from weather_api import Weather
+from app.core.api.weather_api import Weather
+from app.core.weather_printer import format_weather
+
 
 class WeatherHistory(Protocol):
     def save(self, weather: Weather) -> None:

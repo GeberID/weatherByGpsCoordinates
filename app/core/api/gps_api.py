@@ -2,8 +2,8 @@ import json
 from dataclasses import dataclass
 from urllib.request import urlopen
 
-from exceptions import CantGetCoordinates
-from config import COORDINATE
+from app.core.api.exceptions import CantGetCoordinates
+from app.core.config import COORDINATE
 
 
 @dataclass(slots=True)
