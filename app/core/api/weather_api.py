@@ -8,7 +8,7 @@ from enum import Enum
 from urllib.error import URLError
 
 from app.core.api.gps_api import Coordinates
-from app.core.api.exceptions import ApiServiceError
+from app.core.api.exceptions import ApiServiceError, API_WEATHER_ERROR
 from app.core.api.weather_data import WeatherData, Celsius
 from app.core.config import OPENWEATHER_URL
 
@@ -28,14 +28,14 @@ def _get_openweather_response(latitude: float, longitude: float) -> str:
     try:
         return urllib.request.urlopen(url).read()
     except URLError as e:
-        raise ApiServiceError from e
+        raise ApiServiceError(e)
 
 def _parse_openweather_response(openweather_response: str,
                             datetime_weather: datetime,city:str) -> WeatherData:
     try:
         weather_json = json.loads(openweather_response)
     except JSONDecodeError as e:
-        raise ApiServiceError from e
+        raise ApiServiceError(e)
     return WeatherData(
         datetime_weather = datetime_weather,
         temperature=_parse_temperature(weather_json),
@@ -58,7 +58,7 @@ def _parse_weather_type(weather_json: dict) -> str:
     try:
         type_id = str(weather_json["weather"][0]["id"])
     except (IndexError, KeyError) as e:
-        raise ApiServiceError from e
+        raise ApiServiceError(e)
     weather_types = {
         "1": WeatherType.THUNDERSTORM.value,
         "3": WeatherType.DRIZZLE.value,
@@ -71,7 +71,7 @@ def _parse_weather_type(weather_json: dict) -> str:
     for _id, _weather_type in weather_types.items():
         if type_id.startswith(_id):
             return _weather_type
-    raise ApiServiceError
+    raise ApiServiceError(API_WEATHER_ERROR)
 
 def _parse_sun_time(
         weather_json: dict,

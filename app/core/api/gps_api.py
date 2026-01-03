@@ -12,9 +12,9 @@ class Coordinates:
     longitude: float
     city: str
 
-def _get_lat_lot(loc: list[str]) -> tuple[float, float]:
-    latitude = loc.split(',')[0]
-    longitude = loc.split(',')[1]
+def _get_lat_lot(loc: str) -> tuple[float, float]:
+    latitude = float(loc.split(',')[0])
+    longitude = float(loc.split(',')[1])
     return latitude,longitude
 
 def get_gps_coordinates() -> Coordinates:

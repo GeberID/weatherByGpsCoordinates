@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43f4c3d9-87db-47de-8a7b-d34f07df0f31" name="Changes" comment="мини правки">
+    <list default="true" id="43f4c3d9-87db-47de-8a7b-d34f07df0f31" name="Changes" comment="первый рабочий вариант">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/api/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/api/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/api/gps_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/api/gps_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/api/weather_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/api/weather_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/api/weather_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/api/weather_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/history.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/weather.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,16 +15,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.history.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.weather.executor&quot;: &quot;Run&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.history.executor": "Debug",
+    "Python.weather.executor": "Run",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "develop"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="weather" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WeatherByGpsCoordinates" />
@@ -50,6 +57,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.weather" />
         <item itemvalue="Python.weather" />
       </list>
     </recent_temporary>
@@ -87,16 +95,5 @@
     <MESSAGE value="мини правки" />
     <MESSAGE value="первая рабочая версия с json" />
     <option name="LAST_COMMIT_MESSAGE" value="первая рабочая версия с json" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/core/history.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
