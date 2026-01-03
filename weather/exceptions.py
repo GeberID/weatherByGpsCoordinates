@@ -12,3 +12,6 @@ class ApiServiceError(Exception):
     def __str__(self):
         return (f"Ошибка запроса погоды {self.request}"
                 f"Ответ {self.response}")
+
+GPS_COORDINATE_ERROR = "Не смог получить GPS-координаты"
+API_WEATHER_ERROR = "Не смог получить погоду в API-сервиса погоды"
