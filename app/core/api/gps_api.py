@@ -10,6 +10,7 @@ from app.core.config import COORDINATE
 class Coordinates:
     latitude: float
     longitude: float
+    city: str
 
 def _get_lat_lot(loc: list[str]) -> tuple[float, float]:
     latitude = loc.split(',')[0]
@@ -22,4 +23,5 @@ def get_gps_coordinates() -> Coordinates:
     if data is None:
         raise CantGetCoordinates(COORDINATE)
     latitude, longitude = _get_lat_lot(data['loc'])
-    return Coordinates(latitude = latitude, longitude = longitude)
+    city = data['city']
+    return Coordinates(latitude = latitude, longitude = longitude, city = city)

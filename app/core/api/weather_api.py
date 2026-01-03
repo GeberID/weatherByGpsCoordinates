@@ -28,20 +28,24 @@ class WeatherType(Enum):
 class WeatherData:
     datetime_weather: datetime
     temperature: Celsius
+    humidity: float
     weather_type: str
     sunrise_time: datetime
     sunset_time: datetime
     place: str
+    city: str
     country: str
 
     def to_string(self) -> str:
         return f'''
         Время = {self.datetime_weather.strftime('%Y-%m-%d %H:%M:%S')}
         Температура = {self.temperature}
+        Влажность = {self.humidity}
         Тип = {self.weather_type}
         Восход = {self.sunrise_time}
         Закат = {self.sunrise_time}
         Место = {self.place}
+        Город = {self.city}
         Страна = {self.country}'''
 
 def _get_openweather_response(latitude: float, longitude: float) -> str:
@@ -54,7 +58,7 @@ def _get_openweather_response(latitude: float, longitude: float) -> str:
         raise ApiServiceError
 
 def _parse_openweather_response(openweather_response: str,
-                            datetime_weather: datetime) -> WeatherData:
+                            datetime_weather: datetime,city:str) -> WeatherData:
     try:
         weather_json = json.loads(openweather_response)
     except JSONDecodeError:
@@ -62,15 +66,20 @@ def _parse_openweather_response(openweather_response: str,
     return WeatherData(
         datetime_weather = datetime_weather,
         temperature=_parse_temperature(weather_json),
+        humidity=_parse_humidity(weather_json),
         weather_type=_parse_weather_type(weather_json),
         sunrise_time=_parse_sun_time(weather_json, "sunrise"),
         sunset_time=_parse_sun_time(weather_json, "sunset"),
         place= _parse_name_place(weather_json),
+        city= city,
         country = _parse_country(weather_json)
     )
 
 def _parse_temperature(weather_json: dict) -> Celsius:
     return round(weather_json["main"]["temp"])
+
+def _parse_humidity(weather_json: dict) -> Celsius:
+    return round(weather_json["main"]["humidity"])
 
 def _parse_weather_type(weather_json: dict) -> str:
     try:
@@ -105,5 +114,5 @@ def _parse_country(weather_json: dict) -> str:
 def get_weather(coordinates: Coordinates) -> WeatherData:
     openweather_response = _get_openweather_response(
         longitude=coordinates.longitude, latitude=coordinates.latitude)
-    weather = _parse_openweather_response(openweather_response,datetime.now())
+    weather = _parse_openweather_response(openweather_response,datetime.now(),coordinates.city)
     return weather
