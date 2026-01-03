@@ -1,11 +1,10 @@
 from pathlib import Path
 
-from app.core.history import save_weather, FileWeatherHistory
+from app.core.history import save_weather, FileWeatherHistory, JsonWeatherHistory
 from app.core.api.exceptions import CantGetCoordinates, GPS_COORDINATE_ERROR, API_WEATHER_ERROR
 from app.core.api.exceptions import ApiServiceError
 from app.core.api.gps_api import get_gps_coordinates
 from app.core.api.weather_api import get_weather
-from app.core.weather_printer import format_weather
 
 
 def main():
@@ -19,8 +18,9 @@ def main():
     except ApiServiceError:
         print(API_WEATHER_ERROR)
         exit(1)
-    print(format_weather(weather))
+    print(weather.to_string())
     save_weather(weather,FileWeatherHistory(Path.cwd() / "weather_history.txt"))
+    #save_weather(weather,JsonWeatherHistory(Path.cwd() / "weather_history.json"))
 
 if __name__ == '__main__':
     main()
