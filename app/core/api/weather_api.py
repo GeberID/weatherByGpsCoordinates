@@ -1,18 +1,16 @@
 import json
 import ssl
 import urllib
-from dataclasses import dataclass
 from datetime import datetime
 from json import JSONDecodeError
-from typing import TypeAlias, Literal
+from typing import Literal
 from enum import Enum
 from urllib.error import URLError
 
 from app.core.api.gps_api import Coordinates
 from app.core.api.exceptions import ApiServiceError
+from app.core.api.weather_data import WeatherData, Celsius
 from app.core.config import OPENWEATHER_URL
-
-Celsius : TypeAlias = float
 
 class WeatherType(Enum):
     THUNDERSTORM = "Гроза"
@@ -22,43 +20,6 @@ class WeatherType(Enum):
     CLEAR = "Ясно"
     FOG = "Туман"
     CLOUDS = "Облачно"
-
-@dataclass
-class WeatherData:
-    datetime_weather: datetime
-    temperature: Celsius
-    humidity: float
-    weather_type: str
-    sunrise_time: datetime
-    sunset_time: datetime
-    place: str
-    city: str
-    country: str
-
-    def to_string(self) -> str:
-        return (
-f'''
-Время = {self.datetime_weather.strftime('%Y-%m-%d %H:%M:%S')}
-Температура = {self.temperature}
-Влажность = {self.humidity}
-Тип = {self.weather_type}
-Восход = {self.sunrise_time}
-Закат = {self.sunset_time}
-Место = {self.place}
-Город = {self.city}
-Страна = {self.country}''')
-
-
-    def to_json_str(self) -> dict[str,str]:
-        return {"Время":self.datetime_weather.strftime('%Y-%m-%d %H:%M:%S'),
-                "Температура":self.temperature,
-                "Влажность":self.humidity,
-                "Тип":self.weather_type,
-                "Восход":self.sunrise_time.strftime('%Y-%m-%d %H:%M:%S'),
-                "Закат":self.sunset_time.strftime('%Y-%m-%d %H:%M:%S'),
-                "Место":self.place,
-                "Город":self.city,
-                "Страна":self.country,}
 
 def _get_openweather_response(latitude: float, longitude: float) -> str:
     ssl._create_default_https_context = ssl._create_unverified_context

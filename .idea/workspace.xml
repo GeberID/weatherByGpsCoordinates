@@ -16,14 +16,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.history.executor": "Debug",
-    "Python.weather.executor": "Run",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "develop"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.history.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.weather.executor&quot;: &quot;Run&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="weather" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WeatherByGpsCoordinates" />
@@ -71,21 +71,30 @@
       <option name="project" value="LOCAL" />
       <updated>1767439966252</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="первая рабочая версия с json">
+      <option name="closed" value="true" />
+      <created>1767441715655</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767441715655</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="добавил json" />
     <MESSAGE value="мини правки" />
-    <option name="LAST_COMMIT_MESSAGE" value="мини правки" />
+    <MESSAGE value="первая рабочая версия с json" />
+    <option name="LAST_COMMIT_MESSAGE" value="первая рабочая версия с json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/core/history.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="9" />
+          <line>30</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

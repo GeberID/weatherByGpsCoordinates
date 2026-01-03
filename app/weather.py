@@ -1,11 +1,10 @@
 from pathlib import Path
 
+from app.core.api.weather_api import get_weather
 from app.core.history import save_weather, FileWeatherHistory, JsonWeatherHistory
 from app.core.api.exceptions import CantGetCoordinates, GPS_COORDINATE_ERROR, API_WEATHER_ERROR
 from app.core.api.exceptions import ApiServiceError
 from app.core.api.gps_api import get_gps_coordinates
-from app.core.api.weather_api import get_weather
-
 
 def main():
     try:

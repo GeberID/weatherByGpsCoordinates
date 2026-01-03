@@ -1,8 +1,9 @@
 import json
-from datetime import datetime
 from pathlib import Path
 from typing import Protocol, TypedDict
-from app.core.api.weather_api import WeatherData
+
+from app.core.api.weather_data import WeatherData
+
 
 class WeatherHistory(Protocol):
     def save(self, weather: WeatherData) -> None:
