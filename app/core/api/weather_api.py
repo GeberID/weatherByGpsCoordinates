@@ -14,7 +14,6 @@ from app.core.config import OPENWEATHER_URL
 
 Celsius : TypeAlias = float
 
-
 class WeatherType(Enum):
     THUNDERSTORM = "Гроза"
     DRIZZLE = "Изморось"
@@ -37,16 +36,29 @@ class WeatherData:
     country: str
 
     def to_string(self) -> str:
-        return f'''
-        Время = {self.datetime_weather.strftime('%Y-%m-%d %H:%M:%S')}
-        Температура = {self.temperature}
-        Влажность = {self.humidity}
-        Тип = {self.weather_type}
-        Восход = {self.sunrise_time}
-        Закат = {self.sunrise_time}
-        Место = {self.place}
-        Город = {self.city}
-        Страна = {self.country}'''
+        return (
+f'''
+Время = {self.datetime_weather.strftime('%Y-%m-%d %H:%M:%S')}
+Температура = {self.temperature}
+Влажность = {self.humidity}
+Тип = {self.weather_type}
+Восход = {self.sunrise_time}
+Закат = {self.sunset_time}
+Место = {self.place}
+Город = {self.city}
+Страна = {self.country}''')
+
+
+    def to_json_str(self) -> dict[str,str]:
+        return {"Время":self.datetime_weather.strftime('%Y-%m-%d %H:%M:%S'),
+                "Температура":self.temperature,
+                "Влажность":self.humidity,
+                "Тип":self.weather_type,
+                "Восход":self.sunrise_time.strftime('%Y-%m-%d %H:%M:%S'),
+                "Закат":self.sunset_time.strftime('%Y-%m-%d %H:%M:%S'),
+                "Место":self.place,
+                "Город":self.city,
+                "Страна":self.country,}
 
 def _get_openweather_response(latitude: float, longitude: float) -> str:
     ssl._create_default_https_context = ssl._create_unverified_context
@@ -54,15 +66,15 @@ def _get_openweather_response(latitude: float, longitude: float) -> str:
         latitude=latitude, longitude=longitude)
     try:
         return urllib.request.urlopen(url).read()
-    except URLError:
-        raise ApiServiceError
+    except URLError as e:
+        raise ApiServiceError from e
 
 def _parse_openweather_response(openweather_response: str,
                             datetime_weather: datetime,city:str) -> WeatherData:
     try:
         weather_json = json.loads(openweather_response)
-    except JSONDecodeError:
-        raise ApiServiceError
+    except JSONDecodeError as e:
+        raise ApiServiceError from e
     return WeatherData(
         datetime_weather = datetime_weather,
         temperature=_parse_temperature(weather_json),
@@ -84,8 +96,8 @@ def _parse_humidity(weather_json: dict) -> Celsius:
 def _parse_weather_type(weather_json: dict) -> str:
     try:
         type_id = str(weather_json["weather"][0]["id"])
-    except (IndexError, KeyError):
-        raise ApiServiceError
+    except (IndexError, KeyError) as e:
+        raise ApiServiceError from e
     weather_types = {
         "1": WeatherType.THUNDERSTORM.value,
         "3": WeatherType.DRIZZLE.value,
@@ -114,5 +126,6 @@ def _parse_country(weather_json: dict) -> str:
 def get_weather(coordinates: Coordinates) -> WeatherData:
     openweather_response = _get_openweather_response(
         longitude=coordinates.longitude, latitude=coordinates.latitude)
-    weather = _parse_openweather_response(openweather_response,datetime.now(),coordinates.city)
-    return weather
+    return _parse_openweather_response(
+        openweather_response, datetime.now(), coordinates.city
+    )

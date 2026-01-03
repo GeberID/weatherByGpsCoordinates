@@ -20,7 +20,7 @@ def main():
         exit(1)
     print(weather.to_string())
     save_weather(weather,FileWeatherHistory(Path.cwd() / "weather_history.txt"))
-    #save_weather(weather,JsonWeatherHistory(Path.cwd() / "weather_history.json"))
+    save_weather(weather,JsonWeatherHistory(Path.cwd() / "weather_history.json"))
 
 if __name__ == '__main__':
     main()

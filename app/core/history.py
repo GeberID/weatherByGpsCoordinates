@@ -10,30 +10,29 @@ class WeatherHistory(Protocol):
 
 class JsonHistoryData(TypedDict):
     date: str
-    weather: WeatherData
+    weather: dict[str,str]
 
 class FileWeatherHistory:
     def __init__(self, file: Path) -> None:
         self._file = file
 
     def save(self, weather: WeatherData) -> None:
-        date_now = datetime.now()
         formatted_weather = weather.to_string()
         with open(self._file, 'a') as file:
             file.write(f"{formatted_weather}\n\n")
 
-class JsonWeatherHistory(FileWeatherHistory):
+class JsonWeatherHistory(WeatherHistory):
     def __init__(self, json_file: Path) -> None:
         self._json_file = json_file
         self._init_storage()
 
-    '''def save(self, weather: WeatherData) -> None:
+    def save(self, weather: WeatherData) -> None:
         history = self._read_json()
         history.append({
-            'date': weather.datetime_weather,
-            'weather': weather
+            'date': weather.datetime_weather.strftime('%Y-%m-%d %H:%M:%S'),
+            'weather': weather.to_json_str()
         })
-        self._write_json(history)'''
+        self._write_json(history)
 
     def _init_storage(self) -> None:
         if not self._json_file.exists():
